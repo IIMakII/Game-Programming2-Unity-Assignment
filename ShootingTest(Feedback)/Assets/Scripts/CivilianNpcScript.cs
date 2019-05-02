@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CivilianScript1 : MonoBehaviour
+public class CivilianNpcScript : MonoBehaviour
 {
     GameObject player;
     float distFromPlayer;
@@ -18,7 +18,13 @@ public class CivilianScript1 : MonoBehaviour
     void Update()
     {
         distFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (PlayerDistToScare >= distFromPlayer)
+            {
+                Destroy(this.gameObject);
+            }
+        }
 
     }
 }
