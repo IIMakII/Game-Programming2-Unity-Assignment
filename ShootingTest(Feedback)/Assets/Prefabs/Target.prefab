@@ -577,13 +577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0cecb4a133efcb458ad128b664b9135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGO: {fileID: 6219597595099140656}
   destinations:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 6219597595536476662}
+  _canvasGO: {fileID: 6219597595099140656}
   health: 220
 --- !u!1 &6219597595646955230
 GameObject:

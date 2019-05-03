@@ -5,19 +5,16 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 
-public class NPC_Script : MonoBehaviour
+public class NPC_Script : BaseNpc
 {
     private GameObject player;
     private Canvas _canvas;
     [SerializeField] GameObject _canvasGO;
-    [SerializeField] List<GameObject> destinations;
-    int currentDestination = 0;
+    
+   
     private Scrollbar scroll;
     public float health = 200;
     private float originalHealth;
-    
-
-    NavMeshAgent nav;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +22,16 @@ public class NPC_Script : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         _canvas = GetComponentInChildren<Canvas>();
         originalHealth = health;
-        nav = GetComponent<NavMeshAgent>();
         scroll = GetComponentInChildren<Scrollbar>();
-        _canvasGO.SetActive(false); 
+        _canvasGO.SetActive(false);
+        AssignNavVariables();
     }
 
     // Update is called once per frame
     void Update()
     {
+        StartNavMesh();
+
         if (health <= 0)
         {
             gameObject.SetActive(false);
@@ -48,19 +47,7 @@ public class NPC_Script : MonoBehaviour
             Quaternion rotate = Quaternion.LookRotation(direction);
             _canvas.transform.rotation = rotate; 
         }
-
-        if (nav.stoppingDistance >= Vector3.Distance(this.transform.position, destinations[currentDestination].transform.position))
-        {
-            currentDestination = (currentDestination + 1) %  destinations.Capacity;
-            Debug.Log("new pos");
-        }
-
-        if (destinations.Count >= 1)
-        {
-            nav.SetDestination(destinations[currentDestination].transform.position);
-        }
-
-         
+ 
     }
     public void SetUIActive()
     {
