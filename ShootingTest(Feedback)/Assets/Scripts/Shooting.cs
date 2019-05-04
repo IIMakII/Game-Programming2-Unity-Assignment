@@ -79,6 +79,12 @@ public class Shooting : MonoBehaviour
                                 StartCoroutine(ActiveHitMarker(true));
 
                             }
+                            if(hit.transform.tag == "Civilian")
+                            {
+
+                                hit.transform.GetComponent<CivilianNpcScript>().Killed();
+                                StartCoroutine(ActiveHitMarker());
+                            }
                         }
                     }
                 }

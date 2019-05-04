@@ -174,6 +174,7 @@ ModelImporter:
     13700008: Hair
     13700010: Shoes
     13700012: Tops
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -403,22 +404,6 @@ ModelImporter:
         modified: 0
     - boneName: mixamorig_RightToeBase
       humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: mixamorig_LeftEye
-      humanName: LeftEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: mixamorig_RightEye
-      humanName: RightEye
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -673,6 +658,22 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: mixamorig_RightEye
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig_LeftEye
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     skeleton:
     - name: jasper(Clone)
       parentName: 
@@ -837,7 +838,7 @@ ModelImporter:
     - name: mixamorig_LeftHandPinky1
       parentName: mixamorig_LeftHand
       position: {x: -8.696214, y: -1.92466, z: -3.265639}
-      rotation: {x: -0.019098517, y: 0.13318868, z: -0.012780567, w: 0.9908242}
+      rotation: {x: -0.019098513, y: 0.13318868, z: -0.012780565, w: 0.9908242}
       scale: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
     - name: mixamorig_LeftHandPinky2
       parentName: mixamorig_LeftHandPinky1
@@ -887,7 +888,7 @@ ModelImporter:
     - name: mixamorig_LeftHandThumb3
       parentName: mixamorig_LeftHandThumb2
       position: {x: -2.272409, y: -1.478153, z: 1.771937}
-      rotation: {x: 0.055551823, y: -0.06024579, z: 0.020983486, w: 0.9964156}
+      rotation: {x: 0.055551816, y: -0.06024579, z: 0.020983482, w: 0.9964156}
       scale: {x: 0.9999997, y: 0.99999964, z: 1.0000002}
     - name: mixamorig_LeftHandThumb4
       parentName: mixamorig_LeftHandThumb3
@@ -972,7 +973,7 @@ ModelImporter:
     - name: mixamorig_RightHandMiddle3
       parentName: mixamorig_RightHandMiddle2
       position: {x: 2.48881, y: -0.571321, z: 0.039089}
-      rotation: {x: 0.0020017773, y: 0.0061723716, z: -0.037237994, w: 0.99928534}
+      rotation: {x: 0.0020017768, y: 0.0061723716, z: -0.037237987, w: 0.99928534}
       scale: {x: 0.9999995, y: 1.0000004, z: 1.0000002}
     - name: mixamorig_RightHandMiddle4
       parentName: mixamorig_RightHandMiddle3
@@ -987,7 +988,7 @@ ModelImporter:
     - name: mixamorig_RightHandPinky2
       parentName: mixamorig_RightHandPinky1
       position: {x: 2.569081, y: -0.412769, z: -0.482046}
-      rotation: {x: 0.0012108685, y: -0.016160877, z: 0.020293418, w: 0.9996627}
+      rotation: {x: 0.0012108682, y: -0.016160877, z: 0.020293415, w: 0.9996627}
       scale: {x: 1, y: 0.9999996, z: 1.0000002}
     - name: mixamorig_RightHandPinky3
       parentName: mixamorig_RightHandPinky2
@@ -1022,7 +1023,7 @@ ModelImporter:
     - name: mixamorig_RightHandThumb1
       parentName: mixamorig_RightHand
       position: {x: 2.751733, y: -1.492185, z: 2.922981}
-      rotation: {x: -0.09257904, y: -0.03240973, z: 0.08092424, w: 0.9918821}
+      rotation: {x: -0.09257903, y: -0.032409728, z: 0.080924235, w: 0.991882}
       scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
     - name: mixamorig_RightHandThumb2
       parentName: mixamorig_RightHandThumb1

@@ -32,6 +32,7 @@ public class CivilianNpcScript : BaseNpc
                 anim.SetBool("Scared", true);
                 anim.SetBool("Patrol", false);
                 anim.SetBool("CivInContact", false);
+
                 StartCoroutine(StopBeingScared());
             }
         }
@@ -62,5 +63,13 @@ public class CivilianNpcScript : BaseNpc
             anim.SetBool("Patrol", false);
             anim.SetBool("CivInContact", true);
         }
+    }
+
+    public void Killed()
+    {
+        anim.SetBool("Dead", true);
+        anim.SetBool("Scared", false);
+        anim.SetBool("Patrol", false);
+        anim.SetBool("CivInContact", false);
     }
 }
