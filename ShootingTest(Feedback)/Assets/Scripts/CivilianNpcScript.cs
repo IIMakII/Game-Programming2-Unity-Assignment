@@ -54,6 +54,16 @@ public class CivilianNpcScript : BaseNpc
 
         }
     }
+    IEnumerator changeCollider()
+    {
+        yield return new WaitForSeconds(2);
+        CapsuleCollider cap = GetComponentInParent<CapsuleCollider>();
+        cap.direction = 2;
+        cap.center = new Vector3(0, 0, 0);
+        SphereCollider sph = GetComponentInParent<SphereCollider>();
+        sph.enabled = false;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -71,5 +81,6 @@ public class CivilianNpcScript : BaseNpc
         anim.SetBool("Scared", false);
         anim.SetBool("Patrol", false);
         anim.SetBool("CivInContact", false);
+        StartCoroutine(changeCollider());
     }
 }

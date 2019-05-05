@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField] Text ammoUI;
+    [SerializeField] Text ammoUI,pointsUI;
     int ammo;
     private Camera cam;
-    float camOgFOF, timeDiff = 0;
+    float camOgFOF, timeDiff = 0, points = 0;
     bool aim = false, notAiming = false; 
     [SerializeField] float camNewFOF = 40;
  
@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         camOgFOF = cam.fieldOfView;
-       
     }
 
     // Update is called once per frame
@@ -61,5 +60,10 @@ public class PlayerScript : MonoBehaviour
         
     }
 
+    public void UpdateScore(float toAdd)
+    {
+        points += toAdd;
+        pointsUI.text = points.ToString();
+    }
 
 }

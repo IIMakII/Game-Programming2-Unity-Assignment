@@ -8,8 +8,10 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] AudioClip hitSound, gunShot, EmptyClip, Reloading;
     [SerializeField] GameObject HitMarker;
-    [SerializeField] int damage = 70, MaxAmmo = 5, blankShot = 0;
-    public int currentAmmo = 5;
+    [SerializeField] int damage = 0, MaxAmmo = 0, blankShot = 0;
+    [SerializeField] float NpcDamagePoints = 0, CivilianKillPoint = -0, NpcKillBonusPoints = 0, CivilianOverkillPoint = -0, TimeTillNextShot = 0, ReloadTime = 0;
+    protected RaycastHit hit;
+    public int currentAmmo = 0;
     bool isReloading = false;
     Vector3 newSize, ogSize;
     AudioSource ASource;
@@ -19,6 +21,7 @@ public class Shooting : MonoBehaviour
 
     private void Awake()
     {
+       
         currentAmmo = MaxAmmo;
         ASource = GetComponent<AudioSource>();
         cam = GetComponentInChildren<Camera>();
@@ -27,80 +30,101 @@ public class Shooting : MonoBehaviour
         ogSize= canTrans.transform.localScale;
         newSize.x = 1.7f;
         newSize.y = 1.7f;
-    }
-    
 
-    private void Update()
-    {  
-        if(isReloading == false)
+    }
+
+    protected void autoReload()
+    {
+        timediff += Time.deltaTime;
+        if (isReloading == false)
         {
             if (blankShot >= 4)
             {
                 StartCoroutine(Reload());
             }
         }
-        
-        timediff += Time.deltaTime;
-        if(Input.GetButtonDown("Fire1"))
+    }
+
+    protected void Shoot()
+    {
+        if (isReloading == false)
         {
-          if (isReloading == false)
-          {
-                if (.8 <= timediff)
+            if (TimeTillNextShot <= timediff)
+            {
+                if (currentAmmo <= 0)
                 {
-                    if (currentAmmo <= 0)
+                    ASource.PlayOneShot(EmptyClip);
+                    timediff = 0;
+                    blankShot++;
+                }
+
+                else
+                {
+                    currentAmmo--;
+                    timediff = 0;
+                    if (gunShot != null)
                     {
-                        ASource.PlayOneShot(EmptyClip);
-                        timediff = 0;
-                        blankShot++;
+                        ASource.PlayOneShot(gunShot, .2f);
                     }
-
-                    else
+                    if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
                     {
-                        currentAmmo--;
-                        timediff = 0;
-                        RaycastHit hit;
-                        if (gunShot != null)
+                        if (hit.transform.tag == "NPCBody")
                         {
-                            ASource.PlayOneShot(gunShot, .2f);
+                            hit.transform.GetComponentInParent<NPC_Script>().health -= damage;
+                            hit.transform.GetComponentInParent<NPC_Script>().SetUIActive();
+                            StartCoroutine(ActiveHitMarker());
+                            GetComponentInParent<PlayerScript>().UpdateScore(NpcDamagePoints);
+                            if (hit.transform.GetComponentInParent<NPC_Script>().health <= 0)
+                            {
+                                GetComponentInParent<PlayerScript>().UpdateScore(NpcKillBonusPoints);
+                            }
+
                         }
-                        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+                        if (hit.transform.tag == "NPCHead")
                         {
-                            if (hit.transform.tag == "NPCBody")
+                            hit.transform.GetComponentInParent<NPC_Script>().health -= damage * 2;
+                            hit.transform.GetComponentInParent<NPC_Script>().SetUIActive();
+                            StartCoroutine(ActiveHitMarker(true));
+                            GetComponentInParent<PlayerScript>().UpdateScore(NpcDamagePoints * 2.5f);
+                            if (hit.transform.GetComponentInParent<NPC_Script>().health <= 0)
                             {
-                                hit.transform.GetComponentInParent<NPC_Script>().health -= damage;
-                                hit.transform.GetComponentInParent<NPC_Script>().SetUIActive();
-                                StartCoroutine(ActiveHitMarker());
+                                GetComponentInParent<PlayerScript>().UpdateScore(NpcKillBonusPoints);
+                            }
+
+                        }
+                        if (hit.transform.tag == "Civilian")
+                        {
+                            if (damage >= 1)
+                            {
+                                if (hit.transform.GetComponentInParent<Animator>().GetBool("Dead") == true)
+                                {
+                                    GetComponentInParent<PlayerScript>().UpdateScore(CivilianOverkillPoint);
+                                }
+                                else
+                                {
+                                    hit.transform.GetComponent<CivilianNpcScript>().Killed();
+                                    GetComponentInParent<PlayerScript>().UpdateScore(CivilianKillPoint);
+                                }
 
                             }
-                            if (hit.transform.tag == "NPCHead")
-                            {
-                                hit.transform.GetComponentInParent<NPC_Script>().health -= damage * 2;
-                                hit.transform.GetComponentInParent<NPC_Script>().SetUIActive();
-                                StartCoroutine(ActiveHitMarker(true));
 
-                            }
-                            if(hit.transform.tag == "Civilian")
-                            {
-
-                                hit.transform.GetComponent<CivilianNpcScript>().Killed();
-                                StartCoroutine(ActiveHitMarker());
-                            }
+                            StartCoroutine(ActiveHitMarker());
                         }
                     }
                 }
-
             }
-        }
 
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            if(isReloading == false)
-            {
-                StartCoroutine(Reload());
-            }
         }
     }
 
+    protected void StartReload()
+    {
+        if (isReloading == false)
+        {
+            StartCoroutine(Reload());
+        }
+    }
+    
     IEnumerator Reload()
     {
         Debug.Log("reload press");
@@ -110,7 +134,7 @@ public class Shooting : MonoBehaviour
         }
         isReloading = true;
         Debug.Log("reload started");
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(ReloadTime);
         Debug.Log("reload done");
         currentAmmo = MaxAmmo;
         isReloading = false;
