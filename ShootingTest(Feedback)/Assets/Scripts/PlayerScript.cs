@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammo = GetComponent<Shooting>().currentAmmo;
+        ammo = GetComponent<MainGun>().currentAmmo;
         ammoUI.text = "" + ammo;
         timeDiff += Time.deltaTime;
      

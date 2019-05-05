@@ -1332,6 +1332,16 @@ PrefabInstance:
       propertyPath: EmptyClip
       value: 
       objectReference: {fileID: 8300000, guid: 290acf924ddc0e845a2aaf0bc8933859, type: 3}
+    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5aa11f7947a95c84b84d536f1ea4a417, type: 3}
+    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
+        type: 3}
+      propertyPath: Reloading
+      value: 
+      objectReference: {fileID: 8300000, guid: b04ea76fca9fd2a4b9df6dd1ff83b1ca, type: 3}
     - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
         type: 3}
       propertyPath: HitMarker
@@ -1357,7 +1367,8 @@ PrefabInstance:
       propertyPath: EmptyClip
       value: 
       objectReference: {fileID: 8300000, guid: 290acf924ddc0e845a2aaf0bc8933859, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
 --- !u!1 &1445723528
 GameObject:
