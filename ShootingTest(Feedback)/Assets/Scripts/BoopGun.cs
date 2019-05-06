@@ -34,7 +34,10 @@ public class BoopGun : Shooting
     {
         if (hit.rigidbody != null)
         {
-            hit.rigidbody.AddForce(cam.transform.forward * knockBackForce);
+           if (currentAmmo<=0)
+            {
+                hit.rigidbody.AddForce(cam.transform.forward * knockBackForce);
+            }
         }
     }
 }

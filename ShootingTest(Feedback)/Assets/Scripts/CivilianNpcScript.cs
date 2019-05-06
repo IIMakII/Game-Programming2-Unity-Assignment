@@ -75,6 +75,17 @@ public class CivilianNpcScript : BaseNpc
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Civilian")
+        {
+            anim.SetBool("Scared", false);
+            anim.SetBool("Patrol", true);
+            anim.SetBool("CivInContact", false);
+
+        }
+    }
+
     public void Killed()
     {
         anim.SetBool("Dead", true);
