@@ -1374,126 +1374,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
-      propertyPath: HitMarker
-      value: 
-      objectReference: {fileID: 1176005293}
-    - target: {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
-      propertyPath: damage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
-      propertyPath: MaxAmmo
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 917628656, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
       propertyPath: ammoUI
       value: 
       objectReference: {fileID: 1470341854}
     - target: {fileID: 917628656, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
-      propertyPath: pointsUI
-      value: 
-      objectReference: {fileID: 120571126}
-    - target: {fileID: 917628656, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
       propertyPath: boopUI
       value: 
       objectReference: {fileID: 2003643419}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: HitMarker
+    - target: {fileID: 917628656, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
+      propertyPath: pointsUI
       value: 
-      objectReference: {fileID: 1176005293}
+      objectReference: {fileID: 120571126}
     - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: gunShot
-      value: 
-      objectReference: {fileID: 8300000, guid: 9f8b831f7fae92c46b83994f56c58165, type: 3}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: EmptyClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 290acf924ddc0e845a2aaf0bc8933859, type: 3}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: hitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 5aa11f7947a95c84b84d536f1ea4a417, type: 3}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: Reloading
-      value: 
-      objectReference: {fileID: 8300000, guid: b04ea76fca9fd2a4b9df6dd1ff83b1ca, type: 3}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: damage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: MaxAmmo
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: NpcDamagePoints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: CivilianKillPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: NpcKillBonusPoints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: CivilianOverkillPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: TimeTillNextShot
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: knockBackForce
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
         type: 3}
       propertyPath: HitMarker
       value: 
       objectReference: {fileID: 1176005293}
     - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
         type: 3}
-      propertyPath: hitSound
+      propertyPath: HitMarker
       value: 
-      objectReference: {fileID: 8300000, guid: 5aa11f7947a95c84b84d536f1ea4a417, type: 3}
-    - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: gunShot
-      value: 
-      objectReference: {fileID: 8300000, guid: 9f8b831f7fae92c46b83994f56c58165, type: 3}
-    - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: Reloading
-      value: 
-      objectReference: {fileID: 8300000, guid: b04ea76fca9fd2a4b9df6dd1ff83b1ca, type: 3}
-    - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
-        type: 3}
-      propertyPath: EmptyClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 290acf924ddc0e845a2aaf0bc8933859, type: 3}
-    m_RemovedComponents:
-    - {fileID: 917628657, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
+      objectReference: {fileID: 1176005293}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7, type: 3}
 --- !u!1 &1445723528
 GameObject:

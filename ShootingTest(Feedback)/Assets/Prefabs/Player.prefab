@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 917628651}
   - component: {fileID: 917628656}
   - component: {fileID: 7620490936439186153}
-  - component: {fileID: 917628657}
   - component: {fileID: 1601834618202214571}
   m_Layer: 0
   m_Name: Player
@@ -306,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoUI: {fileID: 0}
+  boopUI: {fileID: 0}
   pointsUI: {fileID: 0}
   camNewFOF: 40
 --- !u!114 &7620490936439186153
@@ -320,21 +320,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c105d4074f4501e4988159fd1509ceca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSound: {fileID: 0}
-  gunShot: {fileID: 0}
-  EmptyClip: {fileID: 0}
-  Reloading: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 5aa11f7947a95c84b84d536f1ea4a417, type: 3}
+  gunShot: {fileID: 8300000, guid: 9f8b831f7fae92c46b83994f56c58165, type: 3}
+  EmptyClip: {fileID: 8300000, guid: 290acf924ddc0e845a2aaf0bc8933859, type: 3}
+  Reloading: {fileID: 8300000, guid: b04ea76fca9fd2a4b9df6dd1ff83b1ca, type: 3}
   HitMarker: {fileID: 0}
-  damage: 70
-  MaxAmmo: 5
+  damage: 0
+  MaxAmmo: 2
   blankShot: 0
-  NpcDamagePoints: 100
-  CivilianKillPoint: -1000
-  NpcKillBonusPoints: 75
-  CivilianOverkillPoint: -350
-  TimeTillNextShot: 0.8
+  NpcDamagePoints: 0
+  CivilianKillPoint: 0
+  NpcKillBonusPoints: 0
+  CivilianOverkillPoint: 0
+  TimeTillNextShot: 0.3
+  ReloadTime: 1.8
   currentAmmo: 5
---- !u!114 &917628657
+  knockBackForce: 30000
+--- !u!114 &1601834618202214571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 917628650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0eb667237c8fb499b4096865c24b42, type: 3}
+  m_Script: {fileID: 11500000, guid: e66d10da299569b4dbd7cabe8394575a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 5aa11f7947a95c84b84d536f1ea4a417, type: 3}
@@ -359,19 +361,8 @@ MonoBehaviour:
   NpcKillBonusPoints: 75
   CivilianOverkillPoint: -350
   TimeTillNextShot: 0.8
+  ReloadTime: 1.8
   currentAmmo: 5
---- !u!114 &1601834618202214571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917628650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66d10da299569b4dbd7cabe8394575a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1556703440
 GameObject:
   m_ObjectHideFlags: 0

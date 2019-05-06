@@ -6,11 +6,11 @@ public class BoopGun : Shooting
 {
     // Camera cam;
     [SerializeField] int knockBackForce = 20000;
+    private Rigidbody rb;
 
-    // Start is called before the first frame update
     void Start()
     {
-      //  cam = GetComponentInParent<Camera>();
+        rb = GetComponentInParent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class BoopGun : Shooting
            if (currentAmmo<=0)
             {
                 hit.rigidbody.AddForce(cam.transform.forward * knockBackForce);
+                rb.AddForce(-cam.transform.forward * knockBackForce * 50);
             }
         }
     }
