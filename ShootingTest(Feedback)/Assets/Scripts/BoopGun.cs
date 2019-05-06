@@ -21,15 +21,20 @@ public class BoopGun : Shooting
         if (Input.GetKeyDown(KeyCode.E))
         {
             Shoot();
-            if(hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * knockBackForce);
-            }
+          
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
             StartReload();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (hit.rigidbody != null)
+        {
+            hit.rigidbody.AddForce(cam.transform.forward * knockBackForce);
         }
     }
 }

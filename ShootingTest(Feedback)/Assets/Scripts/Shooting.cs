@@ -15,7 +15,7 @@ public class Shooting : MonoBehaviour
     bool isReloading = false;
     Vector3 newSize, ogSize;
     AudioSource ASource;
-    Camera cam;
+    protected Camera cam;
     RectTransform canTrans;
     float timediff = .8f;
 

@@ -1465,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 7620490936439186153, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
         type: 3}
       propertyPath: knockBackForce
-      value: 1000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 1601834618202214571, guid: 6d4f4a7d47cc8b847a8cba291aeae6f7,
         type: 3}
@@ -2670,6 +2670,11 @@ PrefabInstance:
     - target: {fileID: 8006323522505603556, guid: 7cb23a02ae6b995428fb80413f2d3cfe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006323523134205492, guid: 7cb23a02ae6b995428fb80413f2d3cfe,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8006323523134205495, guid: 7cb23a02ae6b995428fb80413f2d3cfe,
