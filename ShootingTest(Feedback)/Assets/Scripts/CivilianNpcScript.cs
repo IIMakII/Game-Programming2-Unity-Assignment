@@ -77,12 +77,15 @@ public class CivilianNpcScript : BaseNpc
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Civilian")
+       if(anim.GetBool("Scared") == false)
         {
-            anim.SetBool("Scared", false);
-            anim.SetBool("Patrol", true);
-            anim.SetBool("CivInContact", false);
+            if (other.tag == "Civilian")
+            {
+                anim.SetBool("Scared", false);
+                anim.SetBool("Patrol", true);
+                anim.SetBool("CivInContact", false);
 
+            }
         }
     }
 

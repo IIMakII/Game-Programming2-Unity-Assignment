@@ -8,14 +8,16 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] Text ammoUI,boopUI ,pointsUI;
     int ammo;
     private Camera cam;
-    float camOgFOF, timeDiff = 0, points = 0;
+    float camOgFOF, timeDiff = 0;
+    public float points = 0;
     bool aim = false, notAiming = false; 
     [SerializeField] float camNewFOF = 40;
  
-    void Awake()
+    void Start()
     {
         cam = GetComponentInChildren<Camera>();
         camOgFOF = cam.fieldOfView;
+        pointsUI.text = points.ToString();
     }
 
     // Update is called once per frame
