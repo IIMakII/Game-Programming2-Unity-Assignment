@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField] Text ammoUI,pointsUI;
+    [SerializeField] Text ammoUI,boopUI ,pointsUI;
     int ammo;
     private Camera cam;
     float camOgFOF, timeDiff = 0, points = 0;
@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     {
         ammo = GetComponent<MainGun>().currentAmmo;
         ammoUI.text = "" + ammo;
+        boopUI.text = GetComponent<BoopGun>().currentAmmo.ToString();
+
         timeDiff += Time.deltaTime;
      
         if(Input.GetButtonDown("Fire2"))
